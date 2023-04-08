@@ -1,0 +1,107 @@
+* {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	-ms-scroll-snap-type: y mandatory;
+	scroll-snap-type: y mandatory;
+	scroll-padding: 1rem;
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+section {
+	scroll-snap-align: center;
+	gap: 1rem;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+section:nth-child(1) {
+	background-color: hsl(169, 75%, 69%);
+	background-image: linear-gradient(
+		90deg,
+		hsl(169, 75%, 69%) 0%,
+		hsl(229, 59%, 76%) 100%
+	);
+}
+
+section:nth-child(2) {
+	background-color: hsl(204, 72%, 74%);
+	background-image: linear-gradient(
+		135deg,
+		hsl(204, 72%, 74%) 0%,
+		hsl(237, 57%, 74%) 100%
+	);
+}
+
+section:nth-child(3) {
+	background: linear-gradient(
+		to right,
+		hsl(56, 100%, 95%),
+		hsl(208, 100%, 33%)
+	);
+	background-color: hsl(56, 100%, 95%);
+}
+
+section > div {
+	height: 12.5rem;
+}
+
+section > div > div {
+	gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+section > div > div > p {
+	position: relative;
+}
+
+section div p::after {
+	position: absolute;
+	bottom: 2px;
+	left: 5%;
+	display: block;
+	width: 50%;
+	height: 1px;
+	content: '';
+	background-color: hsl(56, 100%, 95%);
+}
+
+section h1 {
+	font-size: clamp(1rem, 2vw, 4rem);
+	color: hsl(56, 100%, 95%);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+		-2px -2px 4px rgba(255, 255, 255, 0.3);
+}
+
+section p {
+	font-family: monospace;
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	color: hsl(56, 100%, 95%);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+		-2px -2px 4px rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+	section {
+		gap: 1.5rem;
+		flex-direction: column;
+	}
+
+	section > div {
+		height: auto;
+	}
+}
